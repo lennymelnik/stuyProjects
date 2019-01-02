@@ -1,0 +1,31 @@
+Hello! My name is Leonard Melnik. Today I will show you how to make your own radio station with only 10 dollars of things! The first step is to make an antenna.
+What you will need for this project is the $ 5 raspberry pi.
+
+You can use any cable. But I will use a small and
+
+Once you have your cable, put it in hole number four of the Raspberry pi.
+
+Now we need to make it work. Go to https://www.raspberrypi.org/downloads/raspbian/ and put it on your card.
+
+Then, place the card in the raspberry pi and turn it on. If you are not using a monitor and a keyboard for the Raspberry Pi you will
+need to connect to it using SSH. Which is like TeamViewer for commands (just an easy description). You will need to plug your Raspberry Pi
+into some kind of internet connection. For this I used a micro-usb to ethernet adapter. This allows for us to install the software we need
+and later on
+
+Commands to do:
+git clone https://github.com/rm-hull/pifm
+cd pifm
+sudo make
+sudo apt-get update 
+
+So we want the thing to help us play the music, so do this:
+
+sudo apt-get install mpg123
+
+Put this in a file called rc.local
+
+sudo /usr/bin/mpg123 -4 -s -Z /home/pi/Music/ * | sudo /home/pi/pifm/pifm - 88.3
+
+Finally do this to turn on your radio! But you have to choose your songs! I chose to put some songs in Spanish.
+
+Now, when you want to listen, simply power the radio and now you can listen to your music.
